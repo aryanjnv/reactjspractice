@@ -3,6 +3,7 @@ import ExpenseItem from './ExpenseItem';
 import Card from '../UI/Card';
 import './Expenses.css';
 import ExpensesFilter from './ExpensesFilter';
+import ExpensesChart from './ExpensesChart';
 
 const Expenses = (props) => {
   const [filteredYear,setFilteredYear]=useState('2020')
@@ -37,6 +38,7 @@ const Expenses = (props) => {
     <ExpensesFilter
     selected={filteredYear}
     onChangeFilter={filterChangeHandler}/>
+    <ExpensesChart expenses={filteredExpenses }/>
    {expensesContent}
    {filteredExpenses.length==1?<p>Only single Expense here. Please add more...</p>:""}
       
